@@ -1,0 +1,45 @@
+{
+  "name": "AIRI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "set NODE_ENV=production&& node index",
+    "dev": "set NODE_ENV=development&& nodemon index.js",
+    "startbk": "set NODE_ENV=production&& npm run build && node ./build/index.js",
+    "start": "set NODE_ENV=production&& node ./build/index.js",
+    "start:dev": "set NODE_ENV=development&& nodemon --exec babel-node ./index.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./index.js -s",
+    "build": "npm run clean && npm run build-babel"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@line/bot-sdk": "^7.4.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "ngrok": "^4.2.2"
+  },
+  "devDependencies": {
+    "@babel/node": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/runtime": "^7.15.4",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "nodemon": "^2.0.13",
+    "prettier": "^2.4.1"
+  }
+}
